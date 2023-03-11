@@ -18,15 +18,31 @@
         let b = +document.getElementById('edge2').value
         let c = +document.getElementById('edge3').value
 
-        if ( a + b > c && a + c > b && c + b > a){
-            if ( a === b || a === c || b === c){
-                if (a === b && a === c && b === c){
+        if (a + b > c && a + c > b && c + b > a) {
+            // if ( a === b || a === c || b === c){
+            //     if (a === b && a === c && b === c){
+            //         document.getElementById('Result').innerHTML = 'Đây là tam giác đều'
+            //     }else {document.getElementById('Result').innerHTML ='Đây là tam giác cân'}
+            // }else if (a*a + b*b === c*c || a*a + c*c === b*b || b*b + c*c === a*a ) {
+            //     document.getElementById('Result').innerHTML = 'Đây là tam giác vuông'
+            // }else {document.getElementById('Result').innerHTML = 'Đây là tam giác thường'}
+
+            switch (true) {
+                case a === b && a === c && b === c:
                     document.getElementById('Result').innerHTML = 'Đây là tam giác đều'
-                }else {document.getElementById('Result').innerHTML ='Đây là tam giác cân'}
-            }else if (a*a + b*b === c*c || a*a + c*c === b*b || b*b + c*c === a*a ) {
-                document.getElementById('Result').innerHTML = 'Đây là tam giác vuông'
-            }else {document.getElementById('Result').innerHTML = 'Đây là tam giác thường'}
-        } else {document.getElementById('Result').innerHTML = 'Tổng 2 cạnh của 1 tam giác phải lớn hơn cạnh còn lại'}
+                    break;
+                case a === b || a === c || b === c:
+                    document.getElementById('Result').innerHTML = 'Đây là tam giác cân'
+                    break;
+                case a * a + b * b === c * c || a * a + c * c === b * b || b * b + c * c === a * a:
+                    document.getElementById('Result').innerHTML = 'Đây là tam giác vuông'
+                    break;
+                default:
+                    document.getElementById('Result').innerHTML = 'Đây là tam giác thường'
+            }
+        } else {
+            document.getElementById('Result').innerHTML = 'Tổng 2 cạnh của 1 tam giác phải lớn hơn cạnh còn lại'
+        }
     }
 </script>
 </body>

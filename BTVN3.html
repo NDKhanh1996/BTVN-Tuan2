@@ -1,10 +1,74 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+    <meta charset="utf-8">
+    <title>Bài 5</title>
 </head>
 <body>
+<h1>Dự đoán hơp mệnh</h1>
+Nhập tuổi nam <input type="date" id="nam"><br>
+Nhập tuổi nữ <input type="date" id="nu"><br>
+<button type="button" onclick="cal()">Dự đoán</button>
+<h2 id="Result"></h2>
 
+<script>
+    function cal() {
+        //gán biến ngày tuổi nam và nữ
+        let Mdate = document.getElementById('nam').value
+        let Fdate = document.getElementById('nu').value
+        // gán biến năm tuổi nam và nữ
+        let Mage = new Date(Mdate).getFullYear();
+        let Fage = new Date(Fdate).getFullYear();
+        //gán biến tính con giáp của nam và nữ
+        let Mzodiac = (Mage - 4) % 12
+        let Fzodiac = (Fage - 4) % 12
+
+        //thứ tự tương ứng với kết quả
+        // 1  Tý (hoặc Chuột)
+        // 2  Sửu (hoặc Trâu)
+        // 3  Dần (hoặc Hổ)
+        // 4  Mão (hoặc Mèo)
+        // 5  Thìn (hoặc Rồng)
+        // 6  Tỵ (hoặc Rắn)
+        // 7  Ngọ (hoặc Ngựa)
+        // 8  Mùi (hoặc Dê)
+        // 9  Thân (hoặc Khỉ)
+        // 10 Dậu (hoặc Gà)
+        // 11 Tuất (hoặc Chó)
+        // 12 Hợi (hoặc Lợn)
+        // tam hợp là
+        // 1 5 9
+        // 2 6 10
+        // 3 7 11
+        // 4 8 12
+
+        // switch () {
+        //     case (Mzodiac === 1 && (Fzodiac === 5 || Fzodiac === 9)) || (Mzodiac === 5 && (Fzodiac === 1 || Fzodiac === 9)) || (Mzodiac === 9 && (Fzodiac === 5 || Fzodiac === 1)):
+        //         document.getElementById('Result').innerHTML = 'Hợp nhau'
+        //         break;
+        //     case (Mzodiac === 2 && (Fzodiac === 6 || Fzodiac === 10)) || (Mzodiac === 6 && (Fzodiac === 2 || Fzodiac === 10)) || (Mzodiac === 10 && (Fzodiac === 2 || Fzodiac === 6)):
+        //         document.getElementById('Result').innerHTML = 'Hợp nhau'
+        //         break;
+        //     case (Mzodiac === 3 && (Fzodiac === 7 || Fzodiac === 11)) || (Mzodiac === 7 && (Fzodiac === 3 || Fzodiac === 11)) || (Mzodiac === 11 && (Fzodiac === 3 || Fzodiac === 7)):
+        //         document.getElementById('Result').innerHTML = 'Hợp nhau'
+        //         break;
+        //     case (Mzodiac === 4 && (Fzodiac === 8 || Fzodiac === 12)) || (Mzodiac === 8 && (Fzodiac === 4 || Fzodiac === 12)) || (Mzodiac === 12 && (Fzodiac === 4 || Fzodiac === 8)):
+        //         document.getElementById('Result').innerHTML = 'Hợp nhau'
+        //         break;
+        //     default: document.getElementById('Result').innerHTML = 'Không hợp nhau'
+        // }
+
+        // không thể dùng switch vì có 2 biến
+        if ((Mzodiac === 1 && (Fzodiac === 5 || Fzodiac === 9)) || (Mzodiac === 5 && (Fzodiac === 1 || Fzodiac === 9)) || (Mzodiac === 9 && (Fzodiac === 5 || Fzodiac === 1))){
+            document.getElementById('Result').innerHTML = 'Hợp nhau'
+        } else if ((Mzodiac === 2 && (Fzodiac === 6 || Fzodiac === 10)) || (Mzodiac === 6 && (Fzodiac === 2 || Fzodiac === 10)) || (Mzodiac === 10 && (Fzodiac === 2 || Fzodiac === 6))){
+            document.getElementById('Result').innerHTML = 'Hợp nhau'
+        } else if ((Mzodiac === 3 && (Fzodiac === 7 || Fzodiac === 11)) || (Mzodiac === 7 && (Fzodiac === 3 || Fzodiac === 11)) || (Mzodiac === 11 && (Fzodiac === 3 || Fzodiac === 7))){
+            document.getElementById('Result').innerHTML = 'Hợp nhau'
+        } else if ((Mzodiac === 4 && (Fzodiac === 8 || Fzodiac === 12)) || (Mzodiac === 8 && (Fzodiac === 4 || Fzodiac === 12)) || (Mzodiac === 12 && (Fzodiac === 4 || Fzodiac === 8))){
+            document.getElementById('Result').innerHTML = 'Hợp nhau'
+        } else {document.getElementById('Result').innerHTML = 'Không hợp nhau'}
+    }
+</script>
 </body>
 </html>

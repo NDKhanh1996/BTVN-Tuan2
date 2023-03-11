@@ -18,17 +18,20 @@
         let a = +document.getElementById('A').value
         let b = +document.getElementById('B').value
         let c = +document.getElementById('C').value
-        let delta = b*b -4*a*c
-
-        if (delta < 0){
-            document.getElementById('Result').innerHTML = 'Phương trình vô nghiệm'
-        }else if( delta === 0) {
-            let R = -b / (2*a);
-            document.getElementById('Result').innerHTML = 'Phương trình có nghiêm kép là: ' +R
-        }else {
-            let R1 = (-b + Math.sqrt(delta)) / (2 * a);
-            let R2 = (-b - Math.sqrt(delta)) / (2 * a);
-            document.getElementById('Result').innerHTML = 'Phương trình có 2 nghiêm là: ' + R1 + ' và ' + R2
+        let delta = b * b - 4 * a * c
+        if (a % 1 === 0 && b % 1 === 0 && c % 1 === 0) {
+            if (delta < 0) {
+                document.getElementById('Result').innerHTML = 'Phương trình vô nghiệm'
+            } else if (delta === 0) {
+                let R = -b / (2 * a);
+                document.getElementById('Result').innerHTML = 'Phương trình có nghiêm kép là: ' + R
+            } else {
+                let R1 = (-b + Math.sqrt(delta)) / (2 * a);
+                let R2 = (-b - Math.sqrt(delta)) / (2 * a);
+                document.getElementById('Result').innerHTML = 'Phương trình có 2 nghiêm là: ' + R1 + ' và ' + R2
+            }
+        } else {
+            document.getElementById('Result').innerHTML = 'Hãy nhập a, b, c là số nguyên'
         }
     }
 </script>
