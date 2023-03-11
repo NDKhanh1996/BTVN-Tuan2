@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 2</title>
+</head>
+<body>
+<h3>Ứng dụng tính số điện</h3>
+<input type="number" placeholder="Nhập số điện" id="sodien">
+<button type="button" onclick="calculate()" value="">Tính</button>
+<h1>Giá điện là (VNĐ):</h1><h3 id="result">Chưa được tính</h3>
+<script>
+    function calculate() {
+        let x = +document.getElementById('sodien').value
+
+        if (x >= 0 && x <= 50) {
+            let r = 1678
+            let R = x * r
+            document.getElementById('result').innerHTML = R
+        } else {
+            if (x >= 51 && x <= 100) {
+                let r = 1734
+                let R = x * r
+                document.getElementById('result').innerHTML = R
+            } else {
+                if (x >= 101 && x <= 200) {
+                    let r = 2014
+                    let R = x * r
+                    document.getElementById('result').innerHTML = R
+                } else {
+                    if (x >= 201 && x <= 300) {
+                        let r = 2536
+                        let R = x * r
+                        document.getElementById('result').innerHTML = R
+                    } else {
+                        if (x >= 301 && x <= 400) {
+                            let r = 2834
+                            let R = x * r
+                            document.getElementById('result').innerHTML = R
+                        } else {
+                            let r = 2927
+                            let R = x * r
+                            document.getElementById('result').innerHTML = R
+                        }
+                    }
+                }
+            }
+
+        }
+    }
+
+
+    // let r = 2927
+    // let R = x * r
+    // document.getElementById('result').innerHTML = R
+
+</script>
+</body>
+</html>

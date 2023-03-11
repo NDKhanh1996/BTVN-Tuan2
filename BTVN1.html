@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 1</title>
+</head>
+<body>
+<input type="number" placeholder="Nhập số dân trong khu vực" id="pop">
+<input type="number" placeholder="Nhập diện tích khu vực" id="area">
+<button type="button" onclick="Calculate()">Tính mật độ dân số</button>
+<br>
+<h1 id="KQ"></h1>
+<script>
+
+    function Calculate() {
+        let n = +document.getElementById("pop").value
+        let m = +document.getElementById("area").value
+
+        if (n < 0) {
+            document.getElementById('KQ').innerHTML = "Dân số và diện tích phải đều là số dương"
+        } else if (m < 0) {
+            document.getElementById('KQ').innerHTML = "Dân số và diện tích phải đều là số dương"
+        } else {
+            if ((n / m) > 1000) {
+                document.getElementById('KQ').innerHTML = 'Dân số quá đông'
+            } else {
+                document.getElementById('KQ').innerHTML = 'Dân số không quá đông'
+            }
+        }
+    }
+
+</script>
+</body>
+</html>

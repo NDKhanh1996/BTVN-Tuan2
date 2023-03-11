@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 4</title>
+</head>
+<body>
+<h1>Ứng dụng kiểm tra tam giác </h1>
+<input type="number" id="edge1" oninput="if(this.value<0){this.value=0;}" placeholder="Nhập cạnh 1 của tam giác">
+<input type="number" id="edge2" oninput="if(this.value<0){this.value=0;}" placeholder="Nhập cạnh 2 của tam giác">
+<input type="number" id="edge3" oninput="if(this.value<0){this.value=0;}" placeholder="Nhập cạnh 3 của tam giác">
+<button type="button" id="calculate" onclick="cal()">Tính</button>
+<h1 id="Result"></h1>
+
+<script>
+    function cal() {
+        let a = +document.getElementById('edge1').value
+        let b = +document.getElementById('edge2').value
+        let c = +document.getElementById('edge3').value
+
+        if ( a + b > c && a + c > b && c + b > a){
+            if ( a === b || a === c || b === c){
+                if (a === b && a === c && b === c){
+                    document.getElementById('Result').innerHTML = 'Đây là tam giác đều'
+                }else {document.getElementById('Result').innerHTML ='Đây là tam giác cân'}
+            }else if (a*a + b*b === c*c || a*a + c*c === b*b || b*b + c*c === a*a ) {
+                document.getElementById('Result').innerHTML = 'Đây là tam giác vuông'
+            }else {document.getElementById('Result').innerHTML = 'Đây là tam giác thường'}
+        } else {document.getElementById('Result').innerHTML = 'Tổng 2 cạnh của 1 tam giác phải lớn hơn cạnh còn lại'}
+    }
+</script>
+</body>
+</html>
