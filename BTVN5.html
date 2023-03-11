@@ -2,9 +2,35 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Bài 5</title>
 </head>
 <body>
+<h1>Ứng dụng tính phương trình bậc 2: ax^2 + bx + c = 0</h1>
+<p>Hãy nhập a, b, c là số nguyên (vì đề bài cho là thế :D)</p>
+<input type="number" id="A" placeholder="Nhập số a">
+<input type="number" id="B" placeholder="Nhập số b">
+<input type="number" id="C" placeholder="Nhập số c">
+<button type="button" id="calculate" onclick="cal()">Tính</button>
+<h1 id="Result"></h1>
 
+<script>
+    function cal() {
+        let a = +document.getElementById('A').value
+        let b = +document.getElementById('B').value
+        let c = +document.getElementById('C').value
+        let delta = b*b -4*a*c
+
+        if (delta < 0){
+            document.getElementById('Result').innerHTML = 'Phương trình vô nghiệm'
+        }else if( delta === 0) {
+            let R = -b / (2*a);
+            document.getElementById('Result').innerHTML = 'Phương trình có nghiêm kép là: ' +R
+        }else {
+            let R1 = (-b + Math.sqrt(delta)) / (2 * a);
+            let R2 = (-b - Math.sqrt(delta)) / (2 * a);
+            document.getElementById('Result').innerHTML = 'Phương trình có 2 nghiêm là: ' + R1 + ' và ' + R2
+        }
+    }
+</script>
 </body>
 </html>
